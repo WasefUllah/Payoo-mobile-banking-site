@@ -3,9 +3,13 @@ document.getElementById("addMoney").addEventListener("click", function (event) {
   const amount = getInputValueByID("amount");
   const pin = getInputValueByID("PIN");
   const mainBalance = getInnerTextByID("mainBalance");
-  const bank = document.getElementById('allBank').value;
+  const bank = document.getElementById("allBank").value;
   console.log(bank);
   const phoneNumber = document.getElementById("phoneNumber").value;
+  if (amount < 0) {
+    alert("Negative amount is not allowed");
+    return;
+  }
   if (amount) {
     if (pin) {
       if (pin === 1234) {
