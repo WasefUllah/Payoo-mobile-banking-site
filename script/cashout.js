@@ -1,18 +1,15 @@
 document.getElementById("cashOut").addEventListener("click", function (event) {
   event.preventDefault();
-  const amount = document.getElementById("cashOutAmount").value;
-  const convertedAmount = parseFloat(amount);
-  const pin = document.getElementById("CashOutPIN").value;
-  const convertedPin = parseInt(pin);
-  const mainBalance = document.getElementById("mainBalance").innerText;
-  const convertedMainBalance = parseFloat(mainBalance);
+  const amount = getInputValueByID('cashOutAmount');
+  const pin = getInputValueByID('CashOutPIN');
+  const mainBalance = getInnerTextByID('mainBalance');
 
   if (amount) {
     if (pin) {
-      if (convertedPin === 1234) {
-        if (convertedAmount < convertedMainBalance) {
-          const sum = convertedMainBalance - convertedAmount;
-          document.getElementById("mainBalance").innerText = sum;
+      if (pin === 1234) {
+        if (amount < mainBalance) {
+          const sum = mainBalance - amount;
+          setInnerTextByIDAndValue('mainBalance', sum);
         } else {
           alert(`Don't have enough money to cash out, please add money`);
         }
