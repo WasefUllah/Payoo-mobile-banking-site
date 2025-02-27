@@ -17,7 +17,9 @@
         <nav class="flex justify-around items-center">
           <img src="assets/Group.png" alt="" class="w-16" />
           <div>
-            <h1 class="text-3xl font-bold">$ <span id="mainBalance">4500</span></h1>
+            <h1 class="text-3xl font-bold">
+              $ <span id="mainBalance">4500</span>
+            </h1>
             <p class="border p-1 rounded-xl">Available balance</p>
           </div>
           <button class="btn">Logout</button>
@@ -30,21 +32,30 @@
           </p>
 
           <div class="card grid grid-cols-3 mt-14 gap-2">
-            <div id="addMoneyBtn" class="box border cursor-pointer p-4 text-center rounded">
+            <div
+              id="addMoneyBtn"
+              class="box border cursor-pointer p-4 text-center rounded"
+            >
               <img class="w-8 mx-auto" src="assets/wallet1.png" alt="" />
               <h3>Add money</h3>
             </div>
-            <div id="cashOutBtn" class="box border cursor-pointer p-4 text-center rounded">
+            <div
+              id="cashOutBtn"
+              class="box border cursor-pointer p-4 text-center rounded"
+            >
               <img class="w-8 mx-auto" src="assets/purse1.png" alt="" />
               <h3>Cash out</h3>
+            </div>
+            <div
+              id = "transactionHistoryBtn"
+              class="box border cursor-pointer p-4 text-center rounded"
+            >
+              <img class="w-8 mx-auto" src="assets/transaction1.png" alt="" />
+              <h3>Transaction History</h3>
             </div>
             <div class="box border cursor-pointer p-4 text-center rounded">
               <img class="w-8 mx-auto" src="assets/money1.png" alt="" />
               <h3>Bonus</h3>
-            </div>
-            <div class="box border cursor-pointer p-4 text-center rounded">
-              <img class="w-8 mx-auto" src="assets/transaction1.png" alt="" />
-              <h3>Transfer money</h3>
             </div>
             <div class="box border cursor-pointer p-4 text-center rounded">
               <img class="w-8 mx-auto" src="assets/bonus1.png" alt="" />
@@ -52,7 +63,7 @@
             </div>
             <div class="box border cursor-pointer p-4 text-center rounded">
               <img class="w-8 mx-auto" src="assets/send1.png" alt="" />
-              <h3>Pay bil</h3>
+              <h3>Pay bill</h3>
             </div>
           </div>
         </section>
@@ -61,25 +72,50 @@
         <section id="addMoneyContainer" class="mx-auto">
           <h2 class="font-bold text-2xl m-2">Add money</h2>
           <div class="">
-            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+            <div
+              class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto"
+            >
               <div class="card-body">
                 <legend>Select payment method</legend>
-                <select class="select">
-                    <option disabled selected >Pick a method</option>
-                    <option value="bkash">Bkash</option>
-                    <option value="nagad">Nagad</option>
-                    <option value="rocket">Rocket</option>
-                  </select>
-                  <fieldset class="fieldset">
-                      <label class="fieldset-label font-bold">Phone Number</label>
-                      <input id="phoneNumber" type="number" class="input" placeholder="Enter your 11 digit phone number" required />
-                      <label class="fieldset-label font-bold">Amount</label>
-                      <input id="amount" type="number" class="input" placeholder="Enter your amount" required />
-                      <label class="fieldset-label font-bold">PIN</label>
-                    <input id="PIN" type="text" class="input" placeholder="Enter your PIN" required />
-                    
-                    <button id="addMoney" class="btn btn-neutral mt-4 bg-blue-500 border-none">Add money</button>
-                  </fieldset>
+                <select id="allBank" class="select">
+                  <option disabled selected>Pick a method</option>
+                  <option value="Bkash">Bkash</option>
+                  <option value="Nagad">Nagad</option>
+                  <option value="Rocket">Rocket</option>
+                </select>
+                <fieldset class="fieldset">
+                  <label class="fieldset-label font-bold">Phone Number</label>
+                  <input
+                    id="phoneNumber"
+                    type="number"
+                    class="input"
+                    placeholder="Enter your 11 digit phone number"
+                    required
+                  />
+                  <label class="fieldset-label font-bold">Amount</label>
+                  <input
+                    id="amount"
+                    type="number"
+                    class="input"
+                    placeholder="Enter your amount"
+                    required
+                  />
+                  <label class="fieldset-label font-bold">PIN</label>
+                  <input
+                    id="PIN"
+                    type="text"
+                    class="input"
+                    placeholder="Enter your PIN"
+                    required
+                  />
+
+                  <button
+                    id="addMoney"
+                    class="btn btn-neutral mt-4 bg-blue-500 border-none"
+                  >
+                    Add money
+                  </button>
+                </fieldset>
               </div>
             </div>
           </div>
@@ -89,29 +125,60 @@
         <section id="cashOutContainer" class="mx-auto">
           <h2 class="font-bold text-2xl m-2">Cash Out</h2>
           <div class="">
-            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+            <div
+              class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto"
+            >
               <div class="card-body">
-               
-                  <fieldset class="fieldset">
-                      <label class="fieldset-label font-bold">Phone Number</label>
-                      <input id="phoneNumber" type="number" class="input" placeholder="Enter your 11 digit phone number" required />
-                      <label class="fieldset-label font-bold">Withdraw amount</label>
-                      <input id="cashOutAmount" type="number" class="input" placeholder="Enter your Withdraw amount" required />
-                      <label class="fieldset-label font-bold">PIN</label>
-                    <input id="CashOutPIN" type="text" class="input" placeholder="Enter your PIN" required />
-                    
-                    <button id="cashOut" class="btn btn-neutral mt-4 bg-blue-500 border-none">Cash out</button>
-                  </fieldset>
+                <fieldset class="fieldset">
+                  <label class="fieldset-label font-bold">Phone Number</label>
+                  <input
+                    id="CashOutPhoneNumber"
+                    type="number"
+                    class="input"
+                    placeholder="Enter your 11 digit phone number"
+                    required
+                  />
+                  <label class="fieldset-label font-bold"
+                    >Withdraw amount</label
+                  >
+                  <input
+                    id="cashOutAmount"
+                    type="number"
+                    class="input"
+                    placeholder="Enter your Withdraw amount"
+                    required
+                  />
+                  <label class="fieldset-label font-bold">PIN</label>
+                  <input
+                    id="CashOutPIN"
+                    type="text"
+                    class="input"
+                    placeholder="Enter your PIN"
+                    required
+                  />
+
+                  <button
+                    id="cashOut"
+                    class="btn btn-neutral mt-4 bg-blue-500 border-none"
+                  >
+                    Cash out
+                  </button>
+                </fieldset>
               </div>
             </div>
           </div>
         </section>
 
+        <!-- transaction history section  -->
+        <section id="transactionHistoryContainer" class="mx-auto">
+          <h1 class="text-2xl font-bold m-2">Transaction History</h1>
+        </section>
       </header>
     </section>
     <script src="utilities/utilities.js"></script>
     <script src="script/addMoney.js"></script>
     <script src="script/cashout.js"></script>
     <script src="script/toggle.js"></script>
+    <script src="script/transactionHistory.js"></script>
   </body>
 </html>

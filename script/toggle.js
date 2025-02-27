@@ -1,10 +1,19 @@
-
-document.getElementById('cashOutContainer').style.display = "none";
-document.getElementById('addMoneyBtn').addEventListener('click', function(){
-    document.getElementById('addMoneyContainer').style.display = "block";
-    document.getElementById('cashOutContainer').style.display = "none";
-})
-document.getElementById('cashOutBtn').addEventListener('click', function(){
-    document.getElementById('addMoneyContainer').style.display = "none";
-    document.getElementById('cashOutContainer').style.display = "block";
-})
+handleToggle("cashOutContainer", "none");
+handleToggle("transactionHistoryContainer", "none");
+document.getElementById("addMoneyBtn").addEventListener("click", function () {
+  handleToggle("addMoneyContainer", "block");
+  handleToggle("cashOutContainer", "none");
+  handleToggle("transactionHistoryContainer", "none");
+});
+document.getElementById("cashOutBtn").addEventListener("click", function () {
+    handleToggle("cashOutContainer", "block");
+  handleToggle("addMoneyContainer", "none");
+  handleToggle("transactionHistoryContainer", "none");
+});
+document
+  .getElementById("transactionHistoryBtn")
+  .addEventListener("click", function () {
+    handleToggle("transactionHistoryContainer", "block");
+    handleToggle("addMoneyContainer", "none");
+    handleToggle("cashOutContainer", "none");
+  });
