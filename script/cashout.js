@@ -3,8 +3,7 @@ document.getElementById("cashOut").addEventListener("click", function (event) {
   const amount = getInputValueByID("cashOutAmount");
   const pin = getInputValueByID("CashOutPIN");
   const mainBalance = getInnerTextByID("mainBalance");
-  const phoneNumber = document.getElementById("phoneNumber").value;
-  const bank = getInputValueByID('allBankAddMoney');
+  const phoneNumber = document.getElementById("CashOutPhoneNumber").value;
   if (amount) {
     if (pin) {
       if (pin === 1234) {
