@@ -1,11 +1,11 @@
 document.getElementById("addMoney").addEventListener("click", function (event) {
   event.preventDefault();
   const amount = document.getElementById("amount").value;
-  const convertedAmount = parseInt(amount);
+  const convertedAmount = parseFloat(amount);
   const pin = document.getElementById("PIN").value;
   const convertedPin = parseInt(pin);
   const mainBalance = document.getElementById("mainBalance").innerText;
-  const convertedMainBalance = parseInt(mainBalance);
+  const convertedMainBalance = parseFloat(mainBalance);
 
   if (amount) {
     if (pin) {

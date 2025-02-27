@@ -30,11 +30,11 @@
           </p>
 
           <div class="card grid grid-cols-3 mt-14 gap-2">
-            <div class="box border cursor-pointer p-4 text-center rounded">
+            <div id="addMoneyBtn" class="box border cursor-pointer p-4 text-center rounded">
               <img class="w-8 mx-auto" src="assets/wallet1.png" alt="" />
               <h3>Add money</h3>
             </div>
-            <div class="box border cursor-pointer p-4 text-center rounded">
+            <div id="cashOutBtn" class="box border cursor-pointer p-4 text-center rounded">
               <img class="w-8 mx-auto" src="assets/purse1.png" alt="" />
               <h3>Cash out</h3>
             </div>
@@ -56,8 +56,9 @@
             </div>
           </div>
         </section>
+
         <!-- add money section -->
-        <section class="mx-auto">
+        <section id="addMoneyContainer" class="mx-auto">
           <h2 class="font-bold text-2xl m-2">Add money</h2>
           <div class="">
             <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
@@ -83,8 +84,33 @@
             </div>
           </div>
         </section>
+
+        <!-- Cash Out section -->
+        <section id="cashOutContainer" class="mx-auto">
+          <h2 class="font-bold text-2xl m-2">Cash Out</h2>
+          <div class="">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+              <div class="card-body">
+               
+                  <fieldset class="fieldset">
+                      <label class="fieldset-label font-bold">Phone Number</label>
+                      <input id="phoneNumber" type="number" class="input" placeholder="Enter your 11 digit phone number" required />
+                      <label class="fieldset-label font-bold">Withdraw amount</label>
+                      <input id="cashOutAmount" type="number" class="input" placeholder="Enter your Withdraw amount" required />
+                      <label class="fieldset-label font-bold">PIN</label>
+                    <input id="CashOutPIN" type="text" class="input" placeholder="Enter your PIN" required />
+                    
+                    <button id="cashOut" class="btn btn-neutral mt-4 bg-blue-500 border-none">Cash out</button>
+                  </fieldset>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </header>
     </section>
     <script src="script/addMoney.js"></script>
+    <script src="script/cashout.js"></script>
+    <script src="script/toggle.js"></script>
   </body>
 </html>
